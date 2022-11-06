@@ -1,0 +1,26 @@
+[
+  {
+    "title": "матове фарбування",
+    "price": "1650 грн",
+    "img": "/img/variants-image-1.png",
+    "id": 1
+  },
+  {
+    "title": "глянцеве фарбування",
+    "price": "1950 грн",
+    "img": "/img/variants-image-2.png",
+    "id": 2
+  },
+  {
+    "title": "тонуваня, нанесення лаку",
+    "price": "950 грн",
+    "img": "/img/variants-image-3.png",
+    "id": 3
+  },
+  {
+    "title": "виготовлення 3D панелей,фасадів",
+    "price": "прораховується індувідуально",
+    "img": "/img/variants-image-4.png",
+    "id": 4
+  }
+]

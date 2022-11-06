@@ -1,0 +1,63 @@
+.scroll {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 70px;
+  z-index: 10;
+  opacity: 0.4;
+
+  &--item {
+    width: 30px;
+    height: 8px;
+    transform: scale3d(0.5, 0.5, 0.5);
+    opacity: 0.4;
+
+    @keyframes scroll-down {
+      25% {
+        opacity: 1;
+      }
+      33% {
+        opacity: 1;
+        transform: translateY(30px);
+      }
+      67% {
+        opacity: 1;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+      }
+    }
+    &:first-child {
+      animation: scroll-down 3s ease-out 3s infinite;
+    }
+    &:nth-child(2) {
+      animation: scroll-down 3s ease-out 2s infinite;
+    }
+
+    &::before {
+      left: 0;
+      transform: skew(0deg, 30deg);
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 51%;
+      background: var(--text-color);
+    }
+    &::after {
+      right: 0;
+      width: 50%;
+      transform: skew(0deg, -30deg);
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 51%;
+      background: #fff;
+    }
+  }
+}

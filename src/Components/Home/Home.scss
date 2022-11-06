@@ -1,0 +1,50 @@
+.home {
+  max-width: 1100px;
+  min-height: 100vh;
+  display: flex;
+
+  &__video {
+    clip: rect(0, 100vw, 100vh, 0);
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  &__container {
+    padding: 0 15px;
+    max-width: 1100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+  &__title,
+  &__description {
+    text-align: center;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    line-height: 120%;
+    max-width: 650px;
+    margin: 0 auto 16px;
+    font-size: 72px;
+    font-weight: 900;
+  }
+  &__title span {
+    color: var(--hover-color);
+  }
+
+  &__description {
+    max-width: 600px;
+    font-size: 24px;
+    line-height: 120%;
+    font-weight: 600;
+  }
+}
