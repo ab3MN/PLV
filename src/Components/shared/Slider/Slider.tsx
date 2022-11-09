@@ -2,6 +2,8 @@ import React, { useEffect, useState, createContext, FC } from 'react';
 
 import Arrows from './Components/Controls/Arrows';
 import Dots from './Components/Controls/Dots';
+import DisabledByDefaultIcon from '@mui/icons-material/DisabledByDefault';
+import IconButton from '@mui/material/IconButton';
 
 import SliderList from './Components/SliderList';
 import './styles.scss';
@@ -23,6 +25,13 @@ interface ISlider {
   autoPlayTime?: number;
   images: Array<{ url: string; title: string }>;
 }
+const style = {
+  color: 'rgb(240, 248, 255)',
+  marginRight: 1.5,
+  '&:hover': {
+    color: 'rgb(3, 233, 244)',
+  },
+};
 
 const Slider: FC<ISlider> = ({
   width = '100%',
@@ -103,6 +112,10 @@ const Slider: FC<ISlider> = ({
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
     >
+      {' '}
+      <IconButton sx={style}>
+        <DisabledByDefaultIcon fontSize="large" />
+      </IconButton>
       <SliderContext.Provider
         value={{
           goToSlide,

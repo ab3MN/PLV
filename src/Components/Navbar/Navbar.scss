@@ -56,9 +56,11 @@
     text-transform: uppercase;
     font-family: 'Montserrat';
     letter-spacing: 0.1rem;
+    cursor: pointer;
   }
 
-  &__link:hover {
+  &__link:hover,
+  :focus {
     color: var(--hover-color);
   }
   &__menu {
@@ -70,5 +72,8 @@
     width: 60vw;
     justify-content: end;
     margin-right: 2rem;
+  }
+  &__active {
+    color: var(--hover-color);
   }
 }
