@@ -4,6 +4,7 @@ import './ContactForm.scss';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
+import { i18nContext } from '../../App';
 
 const textFieldStyle = {
   input: {
@@ -30,6 +31,9 @@ const textAreaStyle = {
 };
 
 const ContactForm = () => {
+  const _i18nContext = React.useContext(i18nContext);
+
+  const t = _i18nContext?.t;
   const [contact, setContact] = React.useState({
     email: '',
     name: '',
@@ -53,12 +57,12 @@ const ContactForm = () => {
       onChange={_handleChange}
       onSubmit={handleSubmit}
     >
-      <h2 className="contact__form--title">Напишіть нам</h2>
+      <h2 className="contact__form--title">{t('contactFormTitle')}</h2>
       <Box className="contact--editor__box">
         <TextField
           required
           id="outlined-required"
-          label="Ім'я"
+          label={t('contactFormName')}
           name="name"
           sx={textFieldStyle}
         />{' '}
@@ -76,7 +80,7 @@ const ContactForm = () => {
         <TextField
           required
           id="outlined-required"
-          label="Номер телефону"
+          label={t('contactFormPhone')}
           sx={textFieldStyle}
           name="phone"
         />{' '}
@@ -85,7 +89,7 @@ const ContactForm = () => {
         {' '}
         <TextareaAutosize
           className="contact__form--textArea"
-          placeholder="Напишіть повідомлення"
+          placeholder={t('contactFormArea')}
           minRows={8}
           maxRows={Infinity}
           style={{ ...textAreaStyle, resize: 'none' }}
@@ -93,7 +97,7 @@ const ContactForm = () => {
         />
       </Box>
       <button className="contact__form--button" type="submit">
-        Надіслати
+        {t('contactFormButton')}
       </button>
     </form>
   );

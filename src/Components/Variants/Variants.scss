@@ -43,6 +43,7 @@
       line-height: 133%;
       margin-bottom: 40px;
       color: var(--bgc-color);
+      text-align: center;
       & span {
         color: var(--hover-color);
       }
@@ -135,4 +136,12 @@
       line-height: 133%;
     }
   }
+}
+
+#slider__close--btn {
+  position: absolute;
+  transform: translateY(20%);
+  top: 0;
+  right: 0;
+  z-index: 999;
 }

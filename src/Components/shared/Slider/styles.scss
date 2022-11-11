@@ -16,8 +16,8 @@
       & .slide-image {
         display: flex;
         margin: 0 auto;
-        height: 300px;
-        width: 300px;
+        height: 600px;
+        width: 600px;
         object-fit: contain;
       }
 
@@ -60,7 +60,7 @@
     justify-content: space-between;
     height: 100%;
     position: absolute;
-    top: 30%;
+    top: 38%;
     width: 100%;
     z-index: 1;
 
@@ -76,7 +76,7 @@
         background-image: url(../../../../public/assets/icons/arrow.png);
         background-repeat: no-repeat;
         background-size: contain;
-        margin-left: 5px;
+        margin-left: 45px;
         transform: rotate(180deg);
       }
 
@@ -84,7 +84,7 @@
         background-image: url(../../../../public/assets/icons/arrow.png);
         background-repeat: no-repeat;
         background-size: contain;
-        margin-right: 5px;
+        margin-right: 45px;
       }
     }
   }

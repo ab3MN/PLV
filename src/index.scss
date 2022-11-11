@@ -44,3 +44,10 @@ h6 {
   margin: 0;
   padding: 0;
 }
+a,
+button,
+input,
+textarea:hover,
+:focus {
+  cursor: pointer;
+}

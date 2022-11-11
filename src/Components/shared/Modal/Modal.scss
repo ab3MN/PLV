@@ -12,11 +12,12 @@
   animation: fadein 1s;
 }
 .modal {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 500px;
-  height: 500px;
+  width: 850px;
+  height: 740px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),

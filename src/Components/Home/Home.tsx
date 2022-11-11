@@ -1,8 +1,12 @@
 import React from 'react';
 import Scroll from '../shared/Scroll/Scroll';
 import './Home.scss';
+import { i18nContext } from '../App';
 
 const Home = () => {
+  const _i18nContext = React.useContext(i18nContext);
+
+  const t = _i18nContext?.t;
   return (
     <section id="home" className="home">
       <video autoPlay loop muted className="home__video">
@@ -12,14 +16,12 @@ const Home = () => {
 
       <article className="home__container">
         <h1 className="home__title">
-          Якісне <br />
-          <span>фарбування</span>
+          {t('homeTitle_1')} <br />
+          <span>{t('homeTitle_2')}</span>
           <br />
-          мдф,шпону
+          {t('homeTitle_3')}
         </h1>
-        <p className="home__description">
-          Виготовлення стінових 3D панелей, фасадів будь-якої складності
-        </p>
+        <p className="home__description">{t('homeDescription')} </p>
       </article>
     </section>
   );

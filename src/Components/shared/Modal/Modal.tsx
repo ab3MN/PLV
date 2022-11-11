@@ -20,10 +20,14 @@ const Modal: FC<IModalProps> = ({
     const handleKeyPress = (e: KeyboardEvent) =>
       e.code !== 'Escape' ? undefined : onClose();
 
+    const closeOnScroll = (e: any) => e && onClose();
+
     window.addEventListener('keydown', handleKeyPress);
+    window.addEventListener('scroll', closeOnScroll);
 
     return () => {
       window.removeEventListener('keydown', handleKeyPress);
+      window.removeEventListener('scroll', closeOnScroll);
     };
   }, [onClose]);
 

@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 import Loader from './shared/Loader/Loader';
 
 interface I18nContext {
-  _changeLanguage: (lng: string) => void;
+  _changeLanguage: (lng: string) => void | undefined;
   t: any;
 }
 

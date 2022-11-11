@@ -7,9 +7,13 @@ import Modal from '../../shared/Modal/Modal';
 import Telegram from '../../shared/svg/Telegram';
 import Viber from '../../shared/svg/Viber';
 import Call from '../../shared/svg/Call';
+import { i18nContext } from '../../App';
 
 const ContactMap = () => {
   const [isModalOpen, setModalOpen] = React.useState(false);
+  const _i18nContext = React.useContext(i18nContext);
+
+  const t = _i18nContext?.t;
 
   const handleOpenModal = () => setModalOpen(true);
 
@@ -17,7 +21,7 @@ const ContactMap = () => {
 
   return (
     <article className="contact__map">
-      <h2 className="contact__map--title">Контакти</h2>
+      <h2 className="contact__map--title"> {t('contactMapTitle')}</h2>
       <div className="contact__map--box">
         <iframe
           title="Our cordinate"
@@ -36,7 +40,7 @@ const ContactMap = () => {
           rel="noreferrer"
         >
           <PlaceIcon fontSize="medium" sx={{ paddingRight: '10px' }} />
-          01013, Україна, м. Київ, Будіндустрії, 7
+          {t('contactFormAddress')}
         </a>
         <button onClick={handleOpenModal}>
           <PhoneIcon fontSize="medium" sx={{ paddingRight: '10px' }} />

@@ -1,22 +1,33 @@
 import React, { useEffect } from 'react';
 import Logo from '../shared/svg/Logo';
 import './Navbar.scss';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import {
+  Link,
+  // animateScroll as scroll
+} from 'react-scroll';
+import LanguageButton from '../shared/LanguageButton/LanguageButton';
+import { i18nContext } from '../App';
+
 const Navbar = () => {
   const [scrollpos, setScrollpos] = React.useState(0);
+  const _i18nContext = React.useContext(i18nContext);
+
+  const t = _i18nContext?.t;
 
   useEffect(() => {
+    if (scrollpos > 1) {
+      return;
+    }
+
     window.addEventListener('scroll', () => setScrollpos(window.scrollY));
   });
 
   return (
     <header className={scrollpos >= 1 ? 'header header__fixed' : 'header '}>
-      {' '}
       <nav className="nav ">
         <Link to="/" className="nav__logo">
           <Logo scrollpos={scrollpos} />
         </Link>
-
         <ul className="nav__menu">
           <li className="nav__item">
             <Link
@@ -28,7 +39,7 @@ const Navbar = () => {
               offset={-10}
               duration={500}
             >
-              головна
+              {t('navHome')}
             </Link>
           </li>
           <li className="nav__item">
@@ -41,7 +52,7 @@ const Navbar = () => {
               offset={-10}
               duration={500}
             >
-              варіанти фарбування
+              {t('navVar')}
             </Link>
           </li>
           <li className="nav__item">
@@ -54,7 +65,7 @@ const Navbar = () => {
               offset={-10}
               duration={500}
             >
-              хто ми
+              {t('navAbout')}
             </Link>
           </li>{' '}
           <li className="nav__item">
@@ -67,10 +78,14 @@ const Navbar = () => {
               offset={-10}
               duration={500}
             >
-              зв'язатися
+              {t('navContact')}
             </Link>
           </li>
-        </ul>
+        </ul>{' '}
+        <div>
+          {' '}
+          <LanguageButton />
+        </div>
       </nav>
     </header>
   );
