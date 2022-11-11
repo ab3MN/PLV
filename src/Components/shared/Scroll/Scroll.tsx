@@ -1,11 +1,19 @@
 import React from 'react';
 import './Scroll.scss';
+import { Link } from 'react-scroll';
 
 const Scroll = ({ to = '' }) => (
-  <a href={to} className="scroll smooth">
+  <Link
+    to={to}
+    className="scroll smooth"
+    spy={true}
+    smooth={true}
+    offset={-10}
+    duration={500}
+  >
     <div className="scroll--item"></div>
     <div className="scroll--item"></div>
-  </a>
+  </Link>
 );
 
 export default React.memo(Scroll);

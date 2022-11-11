@@ -12,7 +12,7 @@ const Home = () => {
       <video autoPlay loop muted className="home__video">
         <source src="/video/home.mp4" type="video/mp4" />
       </video>
-      <Scroll to="#variants" />
+      <Scroll to="variants" />
 
       <article className="home__container">
         <h1 className="home__title">

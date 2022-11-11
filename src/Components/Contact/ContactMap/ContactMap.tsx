@@ -62,7 +62,7 @@ const ContactMap = () => {
           onClose={handleCloseModal}
           style={{
             width: '150px',
-            height: '50px',
+            height: '60px',
             marginTop: '390px',
             marginLeft: '250px',
           }}
