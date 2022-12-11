@@ -6,8 +6,8 @@
   padding: 90px 0;
 
   &__box {
-    margin: 0 auto;
     max-width: 1040px;
+    margin: 0 auto;
     border-radius: 8px;
     background-image: url(../../../public/img/variants-box-image.png);
     background-repeat: no-repeat;
@@ -33,6 +33,7 @@
       z-index: -1;
       pointer-events: none;
       user-select: none;
+      margin-right: 10px;
     }
     &--info {
       width: 400px;
@@ -59,6 +60,8 @@
       transition: all 0.2s ease-in-out;
       outline: none;
       border: none;
+      margin-left: 10px;
+
       & a {
         color: var(--text-color);
       }
@@ -144,4 +147,15 @@
   top: 0;
   right: 0;
   z-index: 999;
+}
+@media screen and (max-width: 1000px) {
+  .variants {
+    &__list {
+      flex-wrap: wrap;
+      &--item {
+        width: 330px;
+        margin: 10px;
+      }
+    }
+  }
 }

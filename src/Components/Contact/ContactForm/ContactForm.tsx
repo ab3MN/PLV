@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import { i18nContext } from '../../App';
+import { validateEmail } from '../../../helpers/validateEmail';
 
 const textFieldStyle = {
   input: {
@@ -22,7 +23,6 @@ const textFieldStyle = {
   },
 };
 const textAreaStyle = {
-  width: '395px',
   outline: 'none',
   borderRadius: '10px',
   border: '1px solid rgba(0, 0, 0, 0.23)',
@@ -32,7 +32,6 @@ const textAreaStyle = {
 
 const ContactForm = () => {
   const _i18nContext = React.useContext(i18nContext);
-
   const t = _i18nContext?.t;
   const [contact, setContact] = React.useState({
     email: '',
@@ -41,25 +40,32 @@ const ContactForm = () => {
     text: '',
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLFormElement>): void =>
-    setContact({ ...contact, [e.target.name]: e.target.value });
-
-  const _handleChange = React.useCallback(handleChange, [contact]);
+  const handleChange = React.useCallback(
+    (e: React.ChangeEvent<HTMLFormElement>): void => {
+      setContact({ ...contact, [e.target.name]: e.target.value });
+    },
+    [contact],
+  );
 
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    console.log(contact);
+  };
+  const textAreaWidth = () => {
+    const width = window.innerWidth;
+    if (width > 1000) return '400px';
+    if (width < 1000 && width > 765) return '260px';
   };
 
   return (
     <form
       className="contact__form"
-      onChange={_handleChange}
+      onChange={handleChange}
       onSubmit={handleSubmit}
     >
       <h2 className="contact__form--title">{t('contactFormTitle')}</h2>
       <Box className="contact--editor__box">
         <TextField
+          error={contact.name.length > 0 && contact.name.length < 4}
           required
           id="outlined-required"
           label={t('contactFormName')}
@@ -69,7 +75,9 @@ const ContactForm = () => {
       </Box>{' '}
       <Box className="contact--editor__box">
         <TextField
+          error={validateEmail(contact.email) === false}
           required
+          type="email"
           id="outlined-required"
           label="Email"
           name="email"
@@ -86,13 +94,17 @@ const ContactForm = () => {
         />{' '}
       </Box>{' '}
       <Box>
-        {' '}
         <TextareaAutosize
+          id="area"
           className="contact__form--textArea"
           placeholder={t('contactFormArea')}
           minRows={8}
           maxRows={Infinity}
-          style={{ ...textAreaStyle, resize: 'none' }}
+          style={{
+            ...textAreaStyle,
+            resize: 'none',
+            maxWidth: textAreaWidth(),
+          }}
           name="text"
         />
       </Box>

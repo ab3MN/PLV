@@ -30,8 +30,8 @@
         color: var(--bgc-color);
       }
     }
+
     &--textArea {
-      width: 437px;
       resize: none;
       outline: none;
       border: 1px solid rgba(0, 0, 0, 0.87);
@@ -44,5 +44,26 @@
       font-weight: 600;
       padding-top: 42px;
     }
+  }
+}
+@media screen and (max-width: 1000px) {
+  .contact {
+    &__form {
+      width: 350px;
+      &--textArea {
+        width: 260px;
+
+        resize: none;
+        outline: none;
+        border: 1px solid rgba(0, 0, 0, 0.87);
+        transform: translateZ(0px);
+      }
+    }
+  }
+  #outlined-required {
+    width: 280px;
+  }
+  #area {
+    width: 260px;
   }
 }

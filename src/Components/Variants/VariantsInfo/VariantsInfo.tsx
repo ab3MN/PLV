@@ -1,5 +1,6 @@
 import React from 'react';
 import { i18nContext } from '../../App';
+import { Link } from 'react-scroll';
 
 const VariantsInfo = () => {
   const _i18nContext = React.useContext(i18nContext);
@@ -13,13 +14,17 @@ const VariantsInfo = () => {
           {t('variantsTitleSpan').toUpperCase()}
         </h2>
         <button className="variants__box--button">
-          <a
-            href="#contact"
+          <Link
+            to="contact"
             className="button-ghost smooth"
             title="Отримати детальний прорахунок"
+            spy={true}
+            smooth={true}
+            offset={-10}
+            duration={500}
           >
             {t('variantsButton').toUpperCase()}{' '}
-          </a>
+          </Link>
         </button>
       </div>
     </article>

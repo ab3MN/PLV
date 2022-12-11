@@ -8,7 +8,7 @@ const Home = () => {
 
   const t = _i18nContext?.t;
   return (
-    <section id="home" className="home">
+    <section id="home section" className="home">
       <video autoPlay loop muted className="home__video">
         <source src="/video/home.mp4" type="video/mp4" />
       </video>

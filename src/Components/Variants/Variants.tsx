@@ -39,7 +39,7 @@ const Variants = () => {
   const img = images.filter(el => el.id === imagesCount)[0]?.data;
 
   return (
-    <section className="variants" id="variants">
+    <section className="variants" id="variants section">
       <VariantsInfo />
       <VariantContext.Provider value={{ _handleOpenModal }}>
         {' '}

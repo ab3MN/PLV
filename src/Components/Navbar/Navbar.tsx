@@ -1,26 +1,31 @@
 import React, { useEffect } from 'react';
 import Logo from '../shared/svg/Logo';
 import './Navbar.scss';
-import {
-  Link,
-  // animateScroll as scroll
-} from 'react-scroll';
+import { Link } from 'react-scroll';
 import LanguageButton from '../shared/LanguageButton/LanguageButton';
 import { i18nContext } from '../App';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const Navbar = () => {
-  const [scrollpos, setScrollpos] = React.useState(0);
+  /* ==================== CONTEXT ==================== */
   const _i18nContext = React.useContext(i18nContext);
-
   const t = _i18nContext?.t;
 
-  useEffect(() => {
-    if (scrollpos > 1) {
-      return;
-    }
+  /* ==================== BURGER ==================== */
+  const [click, setClick] = React.useState(false);
 
-    window.addEventListener('scroll', () => setScrollpos(window.scrollY));
-  });
+  /* ==================== SCROLL ==================== */
+  const [scrollpos, setScrollpos] = React.useState(0);
+  const cnahgeNav = React.useCallback(
+    () =>
+      scrollpos > 1
+        ? undefined
+        : window.addEventListener('scroll', () => setScrollpos(window.scrollY)),
+    [scrollpos],
+  );
+  useEffect(() => {
+    cnahgeNav();
+  }, [cnahgeNav]);
 
   return (
     <header className={scrollpos >= 1 ? 'header header__fixed' : 'header '}>
@@ -28,7 +33,14 @@ const Navbar = () => {
         <Link to="/" className="nav__logo">
           <Logo scrollpos={scrollpos} />
         </Link>
-        <ul className="nav__menu">
+        <button
+          className="nav__burger"
+          onClick={() => setClick(!click)}
+          style={{ color: 'rgb(255, 255, 255)', display: 'none' }}
+        >
+          <MenuIcon />
+        </button>{' '}
+        <ul className="nav__menu" onClick={() => setClick(false)}>
           <li className="nav__item">
             <Link
               to="home"
@@ -80,12 +92,13 @@ const Navbar = () => {
             >
               {t('navContact')}
             </Link>
-          </li>
+          </li>{' '}
         </ul>{' '}
-        <div>
-          {' '}
-          <LanguageButton />
-        </div>
+        {window.innerWidth > 1000 && (
+          <div>
+            <LanguageButton />
+          </div>
+        )}
       </nav>
     </header>
   );

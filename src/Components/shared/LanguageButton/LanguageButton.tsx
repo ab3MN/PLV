@@ -21,15 +21,14 @@ const LanguageButton = () => {
     <>
       <div
         className="lang-switcher"
-        data-lang-1={language === 'ua' ? 'ua' : 'ru'}
-        data-lang-2={language === 'ua' ? 'ru' : 'ua'}
+        data-lang-1={language === 'ua' ? 'Укр' : 'Ру'}
+        data-lang-2={language === 'ua' ? 'Ру' : 'Укр'}
       >
         {' '}
         <div className="lang-switcher--button">
           <div
             className="lang-switcher--button__first"
             data-lang={language === 'ua' ? 'ua' : 'ru'}
-            onClick={changeLanguage}
           ></div>{' '}
           <div
             className="lang-switcher--button__second"

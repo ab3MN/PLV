@@ -76,4 +76,23 @@
   &__active {
     color: var(--hover-color);
   }
+
+  &__burger {
+    background: none;
+    border: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .nav {
+    justify-content: space-between;
+    max-width: 768px;
+    min-width: 768px;
+    &__link {
+      letter-spacing: 0;
+    }
+    &__menu {
+      width: 75vw;
+    }
+  }
 }

@@ -1,6 +1,5 @@
 body {
   font-family: 'Montserrat';
-
   color: var(--text-color);
   margin: 0;
   padding: 0;
@@ -13,6 +12,7 @@ body {
   flex-direction: column;
   line-height: 147%;
   font-weight: 400;
+  transition: transform 0.3s ease-out;
 }
 
 /* ==================== COLORS ==================== */
