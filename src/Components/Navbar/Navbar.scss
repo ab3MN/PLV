@@ -12,7 +12,6 @@
   &__fixed {
     box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.06);
     background-color: var(--bgc-color);
-    max-width: 100%;
     height: 60px;
     padding: 15px 0;
   }
@@ -94,5 +93,20 @@
     &__menu {
       width: 75vw;
     }
+  }
+}
+
+@media screen and (max-width: 765px) {
+  .header {
+    height: 60px;
+  }
+  .nav {
+    max-width: 570px;
+    min-width: 280px;
+    &__menu {
+      display: none;
+    }
+    // &__logo {
+    // }
   }
 }

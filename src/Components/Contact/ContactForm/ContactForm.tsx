@@ -50,11 +50,6 @@ const ContactForm = () => {
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>): void => {
     e.preventDefault();
   };
-  const textAreaWidth = () => {
-    const width = window.innerWidth;
-    if (width > 1000) return '400px';
-    if (width < 1000 && width > 765) return '260px';
-  };
 
   return (
     <form
@@ -103,7 +98,6 @@ const ContactForm = () => {
           style={{
             ...textAreaStyle,
             resize: 'none',
-            maxWidth: textAreaWidth(),
           }}
           name="text"
         />

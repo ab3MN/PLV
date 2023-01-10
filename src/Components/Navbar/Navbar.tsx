@@ -31,15 +31,21 @@ const Navbar = () => {
     <header className={scrollpos >= 1 ? 'header header__fixed' : 'header '}>
       <nav className="nav ">
         <Link to="/" className="nav__logo">
-          <Logo scrollpos={scrollpos} />
+          {window.innerWidth <= 765 ? (
+            <Logo scrollpos={1} />
+          ) : (
+            <Logo scrollpos={scrollpos} />
+          )}
         </Link>
-        <button
-          className="nav__burger"
-          onClick={() => setClick(!click)}
-          style={{ color: 'rgb(255, 255, 255)', display: 'none' }}
-        >
-          <MenuIcon />
-        </button>{' '}
+        {window.innerWidth <= 765 && (
+          <button
+            className="nav__burger"
+            onClick={() => setClick(!click)}
+            style={{ color: 'rgb(255, 255, 255)' }}
+          >
+            <MenuIcon fontSize="large" />
+          </button>
+        )}
         <ul className="nav__menu" onClick={() => setClick(false)}>
           <li className="nav__item">
             <Link
@@ -93,8 +99,8 @@ const Navbar = () => {
               {t('navContact')}
             </Link>
           </li>{' '}
-        </ul>{' '}
-        {window.innerWidth > 1000 && (
+        </ul>
+        {window.innerWidth >= 1000 && (
           <div>
             <LanguageButton />
           </div>

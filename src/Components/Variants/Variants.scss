@@ -159,3 +159,18 @@
     }
   }
 }
+
+@media screen and (max-width: 765px) {
+  .variants {
+    &__box {
+      max-width: 547px;
+      background-color: #ededed;
+      padding: 64px 24px 264px 24px;
+      background-size: 140px;
+      background-position: 100% 100%;
+      &:hover {
+        background-size: 140px;
+      }
+    }
+  }
+}

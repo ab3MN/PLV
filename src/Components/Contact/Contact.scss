@@ -3,20 +3,21 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0% 0%;
-  height: 850px;
+  height: 100%;
   position: relative;
+  padding-bottom: 100px;
 
   &__title {
     color: var(--bgc-color);
     text-align: center;
     padding-top: 150px;
     padding-bottom: 40px;
-    font-size: 54px;
+    font-size: 64px;
     font-weight: 900;
   }
   &__container {
     display: flex;
-    width: 970px;
+    width: 1030px;
     margin: 0 auto;
     justify-content: space-between;
   }
@@ -27,6 +28,17 @@
     &__container {
       max-width: 750px;
     }
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  .contact {
+    &__container {
+      max-width: 577px;
+      flex-direction: column-reverse;
+    }
+
     font-size: 14px;
   }
 }
