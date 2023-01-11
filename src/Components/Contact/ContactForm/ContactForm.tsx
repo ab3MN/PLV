@@ -10,7 +10,7 @@ import { validateEmail } from '../../../helpers/validateEmail';
 const textFieldStyle = {
   input: {
     color: 'black',
-    width: '417px',
+    width: window.innerWidth <= 575 ? '77%' : '417px',
   },
   label: {
     color: 'black',

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './LanguageButton.scss';
 import { i18nContext } from '../../App';
 
-const LanguageButton = () => {
+const LanguageButton: FC<{ scrollpos: number }> = ({ scrollpos }) => {
   const _i18nContext = React.useContext(i18nContext);
   const [language, setLanguage] = React.useState('ua');
 
@@ -23,6 +23,7 @@ const LanguageButton = () => {
         className="lang-switcher"
         data-lang-1={language === 'ua' ? 'Укр' : 'Ру'}
         data-lang-2={language === 'ua' ? 'Ру' : 'Укр'}
+        style={{ marginTop: scrollpos === 0 ? '7px' : '-5px' }}
       >
         {' '}
         <div className="lang-switcher--button">

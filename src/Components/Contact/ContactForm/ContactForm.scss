@@ -51,6 +51,11 @@
   .contact {
     &__form {
       width: 350px;
+
+      &--title {
+        padding: 28px 21px;
+      }
+
       &--textArea {
         width: 260px;
       }
@@ -61,20 +66,123 @@
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 765px) {
   .contact {
     &__form {
       width: 547px;
-      &--textArea {
-        width: 400px;
+      margin: 0 auto;
+
+      &--title {
+        padding: 28px 27px;
       }
+
+      &--textArea {
+        width: 442px;
+      }
+
       &--button {
         display: block;
-        margin: 0 auto;
+        margin: 0 auto 20px;
       }
     }
   }
   #outlined-required {
-    width: 420px;
+    width: 463px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .contact {
+    &__form {
+      width: 95%;
+      margin: 0 auto;
+
+      &--title {
+        padding: 28px 27px;
+      }
+
+      &--textArea {
+        width: 78%;
+      }
+
+      &--button {
+        display: block;
+        margin: 0 auto 20px;
+      }
+    }
+
+    &--editor__box {
+      width: 98%;
+      margin: 0 auto;
+      & div {
+        width: 94%;
+        margin: 0 auto;
+        & label {
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+
+  #outlined-required {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 520px) {
+  .contact {
+    &__form {
+      &--textArea {
+        width: 77%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .contact {
+    &__form {
+      &--textArea {
+        width: 76%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .contact {
+    &__form {
+      &--textArea {
+        width: 75%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .contact {
+    &__form {
+      &--textArea {
+        width: 74%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 345px) {
+  .contact {
+    &__form {
+      &--textArea {
+        width: 73%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 320px) {
+  .contact {
+    &__form {
+      &--textArea {
+        width: 72%;
+      }
+    }
   }
 }

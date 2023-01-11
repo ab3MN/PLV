@@ -11,7 +11,8 @@ const About = () => {
       <article className="about__container">
         <div className="about__box">
           <h3 className="about__title ">
-            <span>{t('aboutTitle')}</span> <br />
+            <span>{t('aboutTitle')}</span>
+            {window.innerWidth > 765 ? <br /> : <span>{'   '}</span>}
             {t('aboutTitleSpan')}{' '}
           </h3>
           <p className="about__text">{t('aboutText_1')} </p>

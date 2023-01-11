@@ -69,12 +69,13 @@
 
 @media screen and (max-width: 1000px) {
   .contact__map {
+    width: 350px;
+
     &--info a,
     button {
       font-size: 14px;
     }
 
-    width: 350px;
     &--box {
       width: 290px;
     }
@@ -83,12 +84,27 @@
 
 @media screen and (max-width: 765px) {
   .contact__map {
-    width: 577px;
-    margin-bottom: 30px;
+    width: 547px;
+    margin: 0 auto 30px;
     &--box {
       width: 500px;
+      margin-right: 12px;
       & iframe {
         width: 500px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .contact__map {
+    width: 95%;
+    margin: 0 auto 30px;
+    &--box {
+      width: 90%;
+      margin-right: 12px;
+      & iframe {
+        width: 100%;
       }
     }
   }

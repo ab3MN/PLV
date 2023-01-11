@@ -41,7 +41,7 @@ const Navbar = () => {
           <button
             className="nav__burger"
             onClick={() => setClick(!click)}
-            style={{ color: 'rgb(255, 255, 255)' }}
+            style={{ color: 'rgb(255, 255, 255)', marginRight: '10px' }}
           >
             <MenuIcon fontSize="large" />
           </button>
@@ -102,7 +102,7 @@ const Navbar = () => {
         </ul>
         {window.innerWidth >= 1000 && (
           <div>
-            <LanguageButton />
+            <LanguageButton scrollpos={scrollpos} />
           </div>
         )}
       </nav>

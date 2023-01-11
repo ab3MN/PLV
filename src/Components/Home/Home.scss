@@ -54,5 +54,28 @@
     &__title {
       font-size: 54px;
     }
+    &__description {
+      font-size: 20px;
+      max-width: 500px;
+    }
+  }
+}
+@media screen and (max-width: 575px) {
+  .home {
+    min-height: 450px;
+
+    &__container {
+      top: 25%;
+      max-width: 545px;
+      padding: 0;
+    }
+    &__title {
+      font-size: 38px;
+    }
+    &__description {
+      font-size: 18px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
   }
 }

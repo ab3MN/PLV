@@ -1,6 +1,7 @@
 import React from 'react';
 import { i18nContext } from '../../App';
 import { Link } from 'react-scroll';
+import './VariantsInfo.scss';
 
 const VariantsInfo = () => {
   const _i18nContext = React.useContext(i18nContext);
@@ -8,7 +9,7 @@ const VariantsInfo = () => {
   return (
     <article className="variants__box">
       <div className="variants__box--info">
-        <h2 className="variants__box--title heading-h1">
+        <h2 className="variants__box--title ">
           <span>{t('variantsTitle').toUpperCase()}</span>
           <br />
           {t('variantsTitleSpan').toUpperCase()}
