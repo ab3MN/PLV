@@ -49,7 +49,7 @@ const Variants = () => {
         <Modal
           onClose={handleCloseModal}
           dropStyle={{
-            // background: 'none',
+            background: 'none',
             width: '99.1vw',
           }}
         >

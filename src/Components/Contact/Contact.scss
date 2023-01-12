@@ -3,15 +3,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0% 0%;
-  height: 100%;
+  height: 100vh;
   position: relative;
-  padding-bottom: 100px;
 
   &__title {
     color: var(--bgc-color);
     text-align: center;
-    padding-top: 150px;
-    padding-bottom: 40px;
+    padding: 150px 0 60px;
     font-size: 64px;
     font-weight: 900;
   }

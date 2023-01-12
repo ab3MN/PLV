@@ -6,13 +6,20 @@ import LanguageButton from '../shared/LanguageButton/LanguageButton';
 import { i18nContext } from '../App';
 import MenuIcon from '@mui/icons-material/Menu';
 
+const navContext = [
+  { to: 'home', name: 'navHome', id: 1 },
+  { to: 'variants', name: 'navVar', id: 2 },
+  { to: 'about', name: 'navAbout', id: 3 },
+  { to: 'contact', name: 'navContact', id: 4 },
+];
+
 const Navbar = () => {
   /* ==================== CONTEXT ==================== */
   const _i18nContext = React.useContext(i18nContext);
   const t = _i18nContext?.t;
 
   /* ==================== BURGER ==================== */
-  const [click, setClick] = React.useState(false);
+  const [isMenuActive, setMenuActive] = React.useState(false);
 
   /* ==================== SCROLL ==================== */
   const [scrollpos, setScrollpos] = React.useState(0);
@@ -40,65 +47,51 @@ const Navbar = () => {
         {window.innerWidth <= 765 && (
           <button
             className="nav__burger"
-            onClick={() => setClick(!click)}
-            style={{ color: 'rgb(255, 255, 255)', marginRight: '10px' }}
+            onClick={() => setMenuActive(!isMenuActive)}
+            style={{
+              color: 'rgb(255, 255, 255)',
+              marginRight: '10px',
+              display: isMenuActive ? 'none' : 'block',
+            }}
           >
             <MenuIcon fontSize="large" />
           </button>
         )}
-        <ul className="nav__menu" onClick={() => setClick(false)}>
-          <li className="nav__item">
-            <Link
-              to="home"
-              activeClass="nav__active"
-              className="nav__link"
-              spy={true}
-              smooth={true}
-              offset={-10}
-              duration={500}
-            >
-              {t('navHome')}
-            </Link>
-          </li>
-          <li className="nav__item">
-            <Link
-              to="variants"
-              className="nav__link"
-              activeClass="nav__active"
-              spy={true}
-              smooth={true}
-              offset={-10}
-              duration={500}
-            >
-              {t('navVar')}
-            </Link>
-          </li>
-          <li className="nav__item">
-            <Link
-              to="about"
-              className="nav__link"
-              activeClass="nav__active"
-              spy={true}
-              smooth={true}
-              offset={-10}
-              duration={500}
-            >
-              {t('navAbout')}
-            </Link>
-          </li>{' '}
-          <li className="nav__item">
-            <Link
-              to="contact"
-              className="nav__link"
-              activeClass="nav__active"
-              spy={true}
-              smooth={true}
-              offset={-10}
-              duration={500}
-            >
-              {t('navContact')}
-            </Link>
-          </li>{' '}
+        <ul className={isMenuActive ? 'nav__menu--active' : 'nav__menu'}>
+          {navContext.map(el => (
+            <li key={el.id}>
+              <Link
+                to={el.to}
+                activeClass="nav__active"
+                className="nav__link"
+                spy={true}
+                smooth={true}
+                offset={-10}
+                duration={500}
+                onClick={() => {
+                  setMenuActive(false);
+                }}
+              >
+                {t(el.name)}
+              </Link>
+            </li>
+          ))}{' '}
+          {isMenuActive && (
+            <div className="nav__menu--language">
+              <button
+                type="button"
+                onClick={() => _i18nContext?._changeLanguage('ua')}
+              >
+                Укр
+              </button>
+              <button
+                type="button"
+                onClick={() => _i18nContext?._changeLanguage('ru')}
+              >
+                РУ
+              </button>
+            </div>
+          )}
         </ul>
         {window.innerWidth >= 1000 && (
           <div>

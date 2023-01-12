@@ -32,3 +32,10 @@
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .modal {
+    width: 650px;
+    height: 650px;
+  }
+}

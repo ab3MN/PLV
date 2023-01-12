@@ -3,6 +3,8 @@
   position: relative;
   color: var(--bgc-color);
   margin-top: 130px;
+  height: 100%;
+  width: 100%;
 
   & .slide-list {
     display: flex;
@@ -10,14 +12,17 @@
     width: 100%;
 
     & .slide {
+      display: block;
       flex: 1 0 100%;
       position: relative;
 
       & .slide-image {
-        display: flex;
+        display: block;
         margin: 0 auto;
-        height: 600px;
-        width: 600px;
+        max-height: 600px;
+        min-height: 200px;
+        max-width: 600px;
+        min-width: 200px;
         object-fit: contain;
       }
 
@@ -86,6 +91,15 @@
         background-size: contain;
         margin-right: 45px;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .slider {
+    & .slide {
+      width: 400px;
+      height: 450px;
     }
   }
 }

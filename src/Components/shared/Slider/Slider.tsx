@@ -25,8 +25,6 @@ interface ISlider {
 }
 
 const Slider: FC<ISlider> = ({
-  width = '100%',
-  height = '100%',
   autoPlay = false,
   autoPlayTime = 5000,
   images = [],
@@ -99,7 +97,6 @@ const Slider: FC<ISlider> = ({
 
   return (
     <div
-      style={{ width, height }}
       className="slider"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
