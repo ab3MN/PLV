@@ -23,7 +23,7 @@ const LanguageButton: FC<{ scrollpos: number }> = ({ scrollpos }) => {
         className="lang-switcher"
         data-lang-1={language === 'ua' ? 'Укр' : 'Ру'}
         data-lang-2={language === 'ua' ? 'Ру' : 'Укр'}
-        style={{ marginTop: scrollpos === 0 ? '7px' : '-5px' }}
+        style={{ marginTop: scrollpos === 0 ? '15px' : '2px' }}
       >
         {' '}
         <div className="lang-switcher--button">

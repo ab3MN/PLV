@@ -33,6 +33,8 @@
 
 @media screen and (max-width: 765px) {
   .contact {
+    height: 100%;
+
     &__container {
       max-width: 577px;
       flex-direction: column-reverse;

@@ -5,7 +5,6 @@ import { Link } from 'react-scroll';
 import LanguageButton from '../shared/LanguageButton/LanguageButton';
 import { i18nContext } from '../App';
 import MenuIcon from '@mui/icons-material/Menu';
-
 const navContext = [
   { to: 'home', name: 'navHome', id: 1 },
   { to: 'variants', name: 'navVar', id: 2 },
@@ -23,6 +22,7 @@ const Navbar = () => {
 
   /* ==================== SCROLL ==================== */
   const [scrollpos, setScrollpos] = React.useState(0);
+
   const cnahgeNav = React.useCallback(
     () =>
       scrollpos > 1
@@ -30,9 +30,17 @@ const Navbar = () => {
         : window.addEventListener('scroll', () => setScrollpos(window.scrollY)),
     [scrollpos],
   );
+
   useEffect(() => {
     cnahgeNav();
   }, [cnahgeNav]);
+
+  const backdropRef: React.RefObject<HTMLInputElement> = React.useRef(null);
+
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) =>
+    backdropRef.current && e.target !== backdropRef.current
+      ? undefined
+      : setMenuActive(false);
 
   return (
     <header className={scrollpos >= 1 ? 'header header__fixed' : 'header '}>
@@ -54,45 +62,96 @@ const Navbar = () => {
               display: isMenuActive ? 'none' : 'block',
             }}
           >
-            <MenuIcon fontSize="large" />
+            <MenuIcon fontSize={scrollpos > 1 ? 'medium' : 'large'} />
           </button>
         )}
-        <ul className={isMenuActive ? 'nav__menu--active' : 'nav__menu'}>
-          {navContext.map(el => (
-            <li key={el.id}>
-              <Link
-                to={el.to}
-                activeClass="nav__active"
-                className="nav__link"
-                spy={true}
-                smooth={true}
-                offset={-10}
-                duration={500}
-                onClick={() => {
-                  setMenuActive(false);
-                }}
-              >
-                {t(el.name)}
-              </Link>
-            </li>
-          ))}{' '}
-          {isMenuActive && (
-            <div className="nav__menu--language">
-              <button
-                type="button"
-                onClick={() => _i18nContext?._changeLanguage('ua')}
-              >
-                Укр
-              </button>
-              <button
-                type="button"
-                onClick={() => _i18nContext?._changeLanguage('ru')}
-              >
-                РУ
-              </button>
-            </div>
-          )}
-        </ul>
+
+        {window.innerWidth <= 765 ? (
+          <div
+            className={
+              isMenuActive
+                ? 'nav__menu--backdrop active'
+                : 'nav__menu--backdrop '
+            }
+            ref={backdropRef}
+            onClick={handleBackdropClick}
+          >
+            <ul className={isMenuActive ? 'nav__menu--active' : 'nav__menu'}>
+              {navContext.map(el => (
+                <li key={el.id}>
+                  <Link
+                    to={el.to}
+                    activeClass="nav__active"
+                    className="nav__link"
+                    spy={true}
+                    smooth={true}
+                    offset={-10}
+                    duration={500}
+                    onClick={() => {
+                      setMenuActive(false);
+                    }}
+                  >
+                    {t(el.name)}
+                  </Link>
+                </li>
+              ))}{' '}
+              {isMenuActive && (
+                <div className="nav__menu--language">
+                  <button
+                    type="button"
+                    onClick={() => _i18nContext?._changeLanguage('ua')}
+                  >
+                    Укр
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => _i18nContext?._changeLanguage('ru')}
+                  >
+                    РУ
+                  </button>
+                </div>
+              )}
+            </ul>
+          </div>
+        ) : (
+          <ul className={isMenuActive ? 'nav__menu--active' : 'nav__menu'}>
+            {navContext.map(el => (
+              <li key={el.id}>
+                <Link
+                  to={el.to}
+                  activeClass="nav__active"
+                  className="nav__link"
+                  spy={true}
+                  smooth={true}
+                  offset={-10}
+                  duration={500}
+                  onClick={() => {
+                    setMenuActive(false);
+                  }}
+                >
+                  {t(el.name)}
+                </Link>
+              </li>
+            ))}{' '}
+            {isMenuActive && (
+              <div className="nav__menu--language">
+                <button
+                  type="button"
+                  onClick={() => _i18nContext?._changeLanguage('ua')}
+                >
+                  Укр
+                </button>
+                <button
+                  type="button"
+                  onClick={() => _i18nContext?._changeLanguage('ru')}
+                >
+                  РУ
+                </button>
+              </div>
+            )}
+          </ul>
+        )}
+
         {window.innerWidth >= 1000 && (
           <div>
             <LanguageButton scrollpos={scrollpos} />

@@ -1,9 +1,12 @@
 import React from 'react';
 import './ContactForm.scss';
 
+import emailjs from '@emailjs/browser';
+
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
+
 import { i18nContext } from '../../App';
 import { validateEmail } from '../../../helpers/validateEmail';
 
@@ -37,7 +40,7 @@ const ContactForm = () => {
     email: '',
     name: '',
     phone: '',
-    text: '',
+    message: '',
   });
 
   const handleChange = React.useCallback(
@@ -47,8 +50,21 @@ const ContactForm = () => {
     [contact],
   );
 
-  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>): void => {
+  const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    try {
+      await emailjs.sendForm(
+        'gmail',
+        'template_vm32oki',
+        e.target,
+        'nmUX5WvqZvX_ZbT9S',
+      );
+    } catch (e) {
+      console.log(e);
+    }
+
+    e.target.reset();
   };
 
   return (
@@ -99,7 +115,7 @@ const ContactForm = () => {
             ...textAreaStyle,
             resize: 'none',
           }}
-          name="text"
+          name="message"
         />
       </Box>
       <button className="contact__form--button" type="submit">
