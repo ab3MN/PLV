@@ -45,7 +45,14 @@ const Navbar = () => {
   return (
     <header className={scrollpos >= 1 ? 'header header__fixed' : 'header '}>
       <nav className="nav ">
-        <Link to="/" className="nav__logo">
+        <Link
+          to="home"
+          className="nav__logo"
+          spy={true}
+          smooth={true}
+          offset={-10}
+          duration={500}
+        >
           {window.innerWidth <= 765 ? (
             <Logo scrollpos={1} />
           ) : (

@@ -1,6 +1,5 @@
 import React, { createContext } from 'react';
 import About from './About/About';
-import './App.scss';
 import Contact from './Contact/Contact';
 import Home from './Home/Home';
 import Navbar from './Navbar/Navbar';
