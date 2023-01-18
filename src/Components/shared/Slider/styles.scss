@@ -19,10 +19,8 @@
       & .slide-image {
         display: block;
         margin: 0 auto;
-        max-height: 600px;
-        min-height: 200px;
-        max-width: 600px;
-        min-width: 200px;
+        width: auto;
+        height: auto;
         object-fit: contain;
       }
 
@@ -100,6 +98,44 @@
     & .slide {
       width: 400px;
       height: 450px;
+    }
+  }
+}
+@media screen and (max-width: 765px) {
+  .slider {
+    & .dots {
+      padding: 0;
+      margin: -40px;
+    }
+  }
+}
+@media screen and (max-width: 575px) {
+  .slider {
+    & .arrows {
+      top: 70%;
+      font-size: 24px;
+      & .arrow {
+        height: 24px;
+        width: 24px;
+      }
+    }
+    & .dots {
+      margin: -40px;
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+  .slider {
+    & .arrows {
+      top: 65%;
+      font-size: 22px;
+      & .arrow {
+        height: 22px;
+        width: 22px;
+      }
+    }
+    & .dots {
+      margin: -140px;
     }
   }
 }

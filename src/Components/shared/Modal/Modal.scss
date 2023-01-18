@@ -39,3 +39,22 @@
     height: 650px;
   }
 }
+
+@media screen and (max-width: 765px) {
+  .modal {
+    width: 550px;
+    height: 550px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .modal {
+    width: 390px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .modal {
+    width: 290px;
+    height: 420px;
+  }
+}
