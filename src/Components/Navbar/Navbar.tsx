@@ -53,11 +53,8 @@ const Navbar = () => {
           offset={-10}
           duration={500}
         >
-          {window.innerWidth <= 765 ? (
-            <Logo scrollpos={1} />
-          ) : (
-            <Logo scrollpos={scrollpos} />
-          )}
+          {' '}
+          <Logo scrollpos={scrollpos} />
         </Link>
         {window.innerWidth <= 765 && (
           <button

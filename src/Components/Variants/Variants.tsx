@@ -13,7 +13,12 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import IconButton from '@mui/material/IconButton';
 
 import Modal from '../shared/Modal/Modal';
-import Slider from '../shared/Slider/Slider';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 interface IVariantContext {
   _handleOpenModal: (id: number) => void;
@@ -73,7 +78,6 @@ const Variants = () => {
             width: '99.1vw',
           }}
         >
-          {' '}
           <IconButton
             sx={style}
             id="slider__close--btn"
@@ -81,7 +85,22 @@ const Variants = () => {
           >
             <CancelIcon fontSize="large" sx={{ color: 'rgb(72, 185, 193)' }} />
           </IconButton>
-          <Slider images={img} />
+          <Swiper
+            modules={
+              window.innerWidth <= 765 ? [Navigation] : [Navigation, Pagination]
+            }
+            spaceBetween={50}
+            slidesPerView={1}
+            navigation={window.innerWidth <= 765 ? false : true}
+            pagination={{ clickable: true }}
+            loop={true}
+          >
+            {img.map((el, i) => (
+              <SwiperSlide key={i}>
+                <img src={el.url} alt={el.title} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </Modal>
       )}
     </section>
