@@ -62,10 +62,10 @@
 }
 @media screen and (max-width: 575px) {
   .home {
-    min-height: 450px;
+    min-height: 500px;
 
     &__container {
-      top: 25%;
+      top: 30%;
       max-width: 545px;
       padding: 0;
     }
@@ -76,6 +76,14 @@
       font-size: 18px;
       max-width: 400px;
       margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .home {
+    &__title {
+      font-size: 32px;
     }
   }
 }

@@ -14,8 +14,18 @@ interface I18nContext {
 
 export const i18nContext = createContext<I18nContext | null>(null);
 
+const asyncCall = () => new Promise<void>(res => setTimeout(() => res()));
+
 const App = () => {
-  const { t, i18n, ready } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const [isLoading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    asyncCall().then(() => {
+      setLoading(false);
+    });
+  });
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -24,7 +34,9 @@ const App = () => {
 
   return (
     <>
-      {ready ? (
+      {isLoading ? (
+        <Loader />
+      ) : (
         <i18nContext.Provider value={{ _changeLanguage, t }}>
           <Navbar />
           <main>
@@ -34,8 +46,6 @@ const App = () => {
             <Contact />
           </main>
         </i18nContext.Provider>
-      ) : (
-        <Loader />
       )}
     </>
   );
