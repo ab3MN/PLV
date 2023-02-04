@@ -75,3 +75,9 @@ $color-accent: #2d69ac;
     height: 52.5px;
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .lang-switcher {
+    right: 2%;
+  }
+}

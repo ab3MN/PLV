@@ -3,27 +3,59 @@
     "id": 1,
     "data": [
       {
-        "url": "/img/Variants/L/1_L.jpg",
+        "url": "/img/Variants/1/L/1_L.jpg",
         "title": "Some awesome title for the first image"
       },
       {
-        "url": "/img/Variants/L/2_L.jpg",
+        "url": "/img/Variants/1/L/2_L.jpg",
         "title": "Some awesome title for the second image"
       },
       {
-        "url": "/img/Variants/L/3_L.jpg",
+        "url": "/img/Variants/1/L/3_L.jpg",
         "title": "Some awesome title for the third image"
       },
       {
-        "url": "/img/Variants/L/4_L.jpg",
+        "url": "/img/Variants/1/L/4_L.jpg",
         "title": "Some awesome title for the fourth image"
       },
       {
-        "url": "/img/Variants/L/5_L.jpg",
+        "url": "/img/Variants/1/L/5_L.jpg",
         "title": "Some awesome title for the fifth  image"
       },
       {
-        "url": "/img/Variants/L/6_L.jpg",
+        "url": "/img/Variants/1/L/6_L.jpg",
+        "title": "Some awesome title for the sixth  image"
+      },
+      {
+        "url": "/img/Variants/1/L/7_L.jpg",
+        "title": "Some awesome title for the sixth  image"
+      },
+      {
+        "url": "/img/Variants/1/L/8_L.jpg",
+        "title": "Some awesome title for the sixth  image"
+      },
+      {
+        "url": "/img/Variants/1/L/9_L.jpg",
+        "title": "Some awesome title for the sixth  image"
+      },
+      {
+        "url": "/img/Variants/1/L/10_L.jpg",
+        "title": "Some awesome title for the sixth  image"
+      },
+      {
+        "url": "/img/Variants/1/L/11_L.jpg",
+        "title": "Some awesome title for the sixth  image"
+      },
+      {
+        "url": "/img/Variants/1/L/12_L.jpg",
+        "title": "Some awesome title for the sixth  image"
+      },
+      {
+        "url": "/img/Variants/1/L/13_L.jpg",
+        "title": "Some awesome title for the sixth  image"
+      },
+      {
+        "url": "/img/Variants/1/L/14_L.jpg",
         "title": "Some awesome title for the sixth  image"
       }
     ]
@@ -32,32 +64,24 @@
     "id": 2,
     "data": [
       {
-        "url": "/img/Variants/L/5_L.jpg",
-
+        "url": "/img/Variants/2/L/1_L.jpg",
         "title": "Some awesome title for the first image"
       },
       {
-        "url": "/img/Variants/L/2_L.jpg",
+        "url": "/img/Variants/2/L/2_L.jpg",
         "title": "Some awesome title for the second image"
       },
       {
-        "url": "/img/Variants/L/4_L.jpg",
-
+        "url": "/img/Variants/2/L/3_L.jpg",
         "title": "Some awesome title for the third image"
       },
       {
-        "url": "/img/Variants/L/3_L.jpg",
-
+        "url": "/img/Variants/2/L/4_L.jpg",
         "title": "Some awesome title for the fourth image"
       },
       {
-        "url": "/img/Variants/L/1_L.jpg",
-
+        "url": "/img/Variants/2/L/5_L.jpg",
         "title": "Some awesome title for the fifth  image"
-      },
-      {
-        "url": "/img/Variants/L/6_L.jpg",
-        "title": "Some awesome title for the sixth  image"
       }
     ]
   },
@@ -65,28 +89,16 @@
     "id": 3,
     "data": [
       {
-        "url": "/img/Variants/L/1_L.jpg",
+        "url": "/img/Variants/3/L/1_L.jpg",
         "title": "Some awesome title for the first image"
       },
       {
-        "url": "/img/Variants/L/2_L.jpg",
+        "url": "/img/Variants/3/L/2_L.jpg",
         "title": "Some awesome title for the second image"
       },
       {
-        "url": "/img/Variants/L/3_L.jpg",
+        "url": "/img/Variants/3/L/3_L.jpg",
         "title": "Some awesome title for the third image"
-      },
-      {
-        "url": "/img/Variants/L/4_L.jpg",
-        "title": "Some awesome title for the fourth image"
-      },
-      {
-        "url": "/img/Variants/L/5_L.jpg",
-        "title": "Some awesome title for the fifth  image"
-      },
-      {
-        "url": "/img/Variants/L/6_L.jpg",
-        "title": "Some awesome title for the sixth  image"
       }
     ]
   },
@@ -94,28 +106,20 @@
     "id": 4,
     "data": [
       {
-        "url": "/img/Variants/L/1_L.jpg",
+        "url": "/img/Variants/4/L/1_L.jpg",
         "title": "Some awesome title for the first image"
       },
       {
-        "url": "/img/Variants/L/2_L.jpg",
+        "url": "/img/Variants/4/L/2_L.jpg",
         "title": "Some awesome title for the second image"
       },
       {
-        "url": "/img/Variants/L/3_L.jpg",
+        "url": "/img/Variants/4/L/3_L.jpg",
         "title": "Some awesome title for the third image"
       },
       {
-        "url": "/img/Variants/L/4_L.jpg",
-        "title": "Some awesome title for the fourth image"
-      },
-      {
-        "url": "/img/Variants/L/5_L.jpg",
-        "title": "Some awesome title for the fifth  image"
-      },
-      {
-        "url": "/img/Variants/L/6_L.jpg",
-        "title": "Some awesome title for the sixth  image"
+        "url": "/img/Variants/4/L/3_L.jpg",
+        "title": "Some awesome title for the third image"
       }
     ]
   }

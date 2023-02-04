@@ -156,7 +156,7 @@ const Navbar = () => {
           </ul>
         )}
 
-        {window.innerWidth >= 1000 && (
+        {window.innerWidth > 765 && (
           <div>
             <LanguageButton scrollpos={scrollpos} />
           </div>

@@ -86,9 +86,7 @@ const Variants = () => {
             <CancelIcon fontSize="large" sx={{ color: 'rgb(72, 185, 193)' }} />
           </IconButton>
           <Swiper
-            modules={
-              window.innerWidth <= 765 ? [Navigation] : [Navigation, Pagination]
-            }
+            modules={[Navigation, Pagination]}
             spaceBetween={50}
             slidesPerView={1}
             navigation={window.innerWidth <= 765 ? false : true}
